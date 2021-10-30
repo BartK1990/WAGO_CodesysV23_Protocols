@@ -8,4 +8,9 @@
     <PackageReference Include="EPPlus" Version="4.5.3.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ExcelAccess\" />
+    <Folder Include="XmlAccess\" />
+  </ItemGroup>
+
 </Project>
