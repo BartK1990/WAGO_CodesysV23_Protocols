@@ -1,0 +1,21 @@
+﻿<Page x:Class="WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View.InformationView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+      Title="InformationView">
+
+    <Grid>
+        <TextBox HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Stretch"
+                 TextWrapping="Wrap"
+                 IsReadOnly="True"
+                 FontSize="16"
+                 BorderThickness="0"
+                 Text="Converter supports:&#xD;&#xA;- IEC 60870-5-104&#xD;&#xA;&#x9;- ME_MC_NA (13)&#xD;&#xA;&#x9;- MENASD (12)"
+                 />
+    </Grid>
+</Page>

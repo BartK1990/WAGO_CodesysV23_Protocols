@@ -1,6 +1,6 @@
 ﻿namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel
 {
-    public class ConverterXmlExcelViewModel
+    public class ConverterXmlExcelViewModel : ViewModelBase
     {
     }
 }
