@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Text;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
 {
@@ -21,6 +11,16 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
         public InformationView()
         {
             InitializeComponent();
+
+            var sb = new StringBuilder();
+            sb.AppendLine("Converter supports:");
+            sb.AppendLine("- IEC 60870-5-104");
+            sb.AppendLine("  - M_SP_NA (01)");
+            sb.AppendLine("  - M_ME_NC (13)");
+            sb.AppendLine("  - C_SC_NA (45)");
+            sb.AppendLine("  - C_SE_NC (50)");
+
+            InormationTextBox.Text = sb.ToString();
         }
     }
 }

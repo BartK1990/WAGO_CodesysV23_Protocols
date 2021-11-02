@@ -13,9 +13,10 @@
                  VerticalAlignment="Stretch"
                  TextWrapping="Wrap"
                  IsReadOnly="True"
-                 FontSize="16"
+                 FontSize="12"
                  BorderThickness="0"
-                 Text="Converter supports:&#xD;&#xA;- IEC 60870-5-104&#xD;&#xA;&#x9;- ME_MC_NA (13)&#xD;&#xA;&#x9;- MENASD (12)"
+                 Text=""
+                 x:Name="InormationTextBox"
                  />
     </Grid>
 </Page>

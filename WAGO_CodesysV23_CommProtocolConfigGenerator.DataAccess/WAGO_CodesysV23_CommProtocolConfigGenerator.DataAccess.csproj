@@ -9,8 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ExcelAccess\" />
     <Folder Include="XmlAccess\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WAGO_CodesysV23_CommProtocolConfigGenerator.Model\WAGO_CodesysV23_CommProtocolConfigGenerator.Model.csproj" />
   </ItemGroup>
 
 </Project>

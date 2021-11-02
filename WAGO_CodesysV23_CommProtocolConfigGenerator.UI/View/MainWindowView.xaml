@@ -12,7 +12,7 @@
                  Height="400" 
                  Width="600"
                  MinHeight="400"
-                 MinWidth="400"
+                 MinWidth="600"
                  GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
                  ResizeMode="CanResize"
                  WindowStartupLocation="CenterScreen">
@@ -82,7 +82,7 @@
                             <TextBlock x:Name="Header"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
-                                       FontSize="20"
+                                       FontSize="16"
                                        Text="{Binding Label}" />
                         </Border>
                         <Frame x:Name="TheContent"

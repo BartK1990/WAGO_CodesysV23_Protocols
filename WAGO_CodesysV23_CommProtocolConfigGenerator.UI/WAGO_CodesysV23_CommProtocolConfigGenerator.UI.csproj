@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Image\Icon\exchange-arrows_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +14,10 @@
 
   <ItemGroup>
     <Folder Include="Data\Service\" />
-    <Folder Include="Data\Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WAGO_CodesysV23_CommProtocolConfigGenerator.DataAccess\WAGO_CodesysV23_CommProtocolConfigGenerator.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

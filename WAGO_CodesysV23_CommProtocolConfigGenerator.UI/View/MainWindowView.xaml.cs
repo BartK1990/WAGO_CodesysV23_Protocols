@@ -2,8 +2,6 @@
 using MahApps.Metro.Controls;
 using MahApps.Metro.IconPacks;
 using System.Windows;
-using System.Windows.Controls;
-using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel;
 
 namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
 {
@@ -24,7 +22,8 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
             // Initialize Page views for Window
             var converterXmlExcelView = new ConverterXmlExcelView
             {
-                DataContext = new ViewModel.ConverterXmlExcelViewModel()
+                DataContext = new ViewModel.ConverterXmlExcelViewModel(fileDialog: curApp.FileDialog,
+                    errorHandler: curApp.ErrorHandler)
             };
             var informationView = new InformationView();
 

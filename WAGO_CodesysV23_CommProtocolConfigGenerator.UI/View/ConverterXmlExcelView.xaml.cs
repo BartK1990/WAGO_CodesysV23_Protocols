@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel;
 
 namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
 {
@@ -27,12 +18,11 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                // Note that you can have more than one file.
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-                var s = sender as TextBox;
-                if (files.Length == 1)
-                    s.Text = files[0];
+                if(files.Length > 0)
+                {
+                    ((ConverterXmlExcelViewModel)this.DataContext).GetProtocolConfigurationCommand.ExecuteAsync(files[0]);
+                }
             }
         }
 
