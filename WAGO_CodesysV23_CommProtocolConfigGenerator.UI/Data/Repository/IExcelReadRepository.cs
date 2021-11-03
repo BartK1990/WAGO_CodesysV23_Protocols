@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Data.Repositories
+namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Data.Repository
 {
-    public interface IExcelReadRepository<TData>
+    internal interface IExcelReadRepository<TData>
     {
         Task<TData> ReadDataAsync(string path);
     }

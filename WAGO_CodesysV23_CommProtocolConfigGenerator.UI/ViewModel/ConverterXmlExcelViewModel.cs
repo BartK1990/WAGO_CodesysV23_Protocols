@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Data.Repository;
 using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Event;
 using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View.Services;
 using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel.Command;
@@ -7,10 +8,11 @@ using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel.Service;
 
 namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel
 {
-    public class ConverterXmlExcelViewModel : ViewModelBase
+    internal class ConverterXmlExcelViewModel : ViewModelBase
     {
         private readonly IExcelXmlFileDialog _fileDialog;
         private readonly IErrorHandler _errorHandler;
+        private readonly IProtocolConfigurationObjectsReadRepository _protocolConfigurationObjectsReadRepository;
 
         private string _loggerText;
         public string LoggerText
@@ -33,11 +35,14 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel
             set { this.SetAndNotify(ref this._protocolConfigurationPath, value, () => this.ProtocolConfigurationPath); }
         }
 
-        public ConverterXmlExcelViewModel(IExcelXmlFileDialog fileDialog, 
-            IErrorHandler errorHandler)
+        internal ConverterXmlExcelViewModel(IExcelXmlFileDialog fileDialog, 
+            IErrorHandler errorHandler,
+            IProtocolConfigurationObjectsReadRepository protocolConfigurationObjectsReadRepository)
         {
             this._fileDialog = fileDialog;
             this._errorHandler = errorHandler;
+            this._errorHandler.NewError += LogNewError;
+            this._protocolConfigurationObjectsReadRepository = protocolConfigurationObjectsReadRepository;
 
             // Commands
             OpenProtocolConfigurationCommand = new AsyncCommand(OnOpenProtocolConfiguration, OpenProtocolConfigurationCanExecute, this._errorHandler);
@@ -65,6 +70,7 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel
             {
                 ProtocolConfigurationLoading = true;
                 // ToDo read file handling
+                var protocolConfigurationObjects = await _protocolConfigurationObjectsReadRepository.ReadDataAsync(filePath);
                 ProtocolConfigurationPath = filePath;
                 Log("Protocol configuration loaded");
             }

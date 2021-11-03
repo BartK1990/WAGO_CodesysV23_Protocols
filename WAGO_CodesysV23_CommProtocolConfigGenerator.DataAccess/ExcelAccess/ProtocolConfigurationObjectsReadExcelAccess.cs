@@ -13,8 +13,10 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.DataAccess.ExcelAccess
             //SheetName = MappingSetGenerator.SourceItemDictionarySheetName; // Sheet name used in base class in GetExcelData
 
             // Excel sheet columns to read
+            columnsNamesToClassDict.Add("Connection", "ConnectionName");
+            columnsNamesToClassDict.Add("Object", "ObjectType");
             columnsNamesToClassDict.Add("Comment", "Comment");
-            columnsNamesToClassDict.Add("Address", "Tagname");
+            columnsNamesToClassDict.Add("Address", "Address");
             columnsNamesToClassDict.Add("IEE754/SPI/SCS", "MainVariable.Assignment");
             columnsNamesToClassDict.Add("AD_IEE754/SPI/SCS", "MainVariable.Autoapply");
             columnsNamesToClassDict.Add("CP56Time", "CP56Time.Assignment");
@@ -50,7 +52,7 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.DataAccess.ExcelAccess
 
         protected override int RequiredColumnNumber()
         {
-            return _columnsNumbersToStructDict.FirstOrDefault(v => v.Value == "Object").Key;
+            return _columnsNumbersToStructDict.FirstOrDefault(v => v.Value == "ObjectType").Key;
         }
     }
 }

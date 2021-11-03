@@ -23,7 +23,8 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View
             var converterXmlExcelView = new ConverterXmlExcelView
             {
                 DataContext = new ViewModel.ConverterXmlExcelViewModel(fileDialog: curApp.FileDialog,
-                    errorHandler: curApp.ErrorHandler)
+                    errorHandler: curApp.ErrorHandler,
+                    protocolConfigurationObjectsReadRepository: curApp.ProtocolConfigurationObjectsReadRepository)
             };
             var informationView = new InformationView();
 

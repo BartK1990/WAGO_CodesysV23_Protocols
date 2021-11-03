@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using WAGO_CodesysV23_CommProtocolConfigGenerator.DataAccess.ExcelAccess;
+using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Data.Repository;
 using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.View.Services;
 using WAGO_CodesysV23_CommProtocolConfigGenerator.UI.ViewModel.Service;
 
@@ -15,8 +11,9 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI
     /// </summary>
     public partial class App : Application
     {
-        public IExcelXmlFileDialog FileDialog;
-        public IErrorHandler ErrorHandler;
+        internal IExcelXmlFileDialog FileDialog;
+        internal IErrorHandler ErrorHandler;
+        internal IProtocolConfigurationObjectsReadRepository ProtocolConfigurationObjectsReadRepository;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -25,6 +22,7 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI
             // Application objects initialization
             FileDialog = new ExcelXmlFileDialog();
             ErrorHandler = new ErrorHandler();
+            ProtocolConfigurationObjectsReadRepository = new ProtocolConfigurationObjectsReadRepository(new ProtocolConfigurationObjectsReadExcelAccess());
         }
     }
 }

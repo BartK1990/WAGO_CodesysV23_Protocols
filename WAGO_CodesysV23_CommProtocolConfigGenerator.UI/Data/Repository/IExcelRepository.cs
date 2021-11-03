@@ -1,6 +1,6 @@
-﻿namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Data.Repositories
+﻿namespace WAGO_CodesysV23_CommProtocolConfigGenerator.UI.Data.Repository
 {
-    public interface IExcelRepository
+    internal interface IExcelRepository
     {
     }
 }

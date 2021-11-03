@@ -16,5 +16,17 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.Model.Item
         public Iec608705104Channel SB { get; set; }
         public Iec608705104Channel NT { get; set; }
         public Iec608705104Channel IV { get; set; }
+
+        public Iec608705104AllObjectAttributes()
+        {
+            MainVariable = new Iec608705104Channel();
+            CP56Time = new Iec608705104Channel();
+            Execute = new Iec608705104Channel();
+            OV = new Iec608705104Channel();
+            BL = new Iec608705104Channel();
+            SB = new Iec608705104Channel();
+            NT = new Iec608705104Channel();
+            IV = new Iec608705104Channel();
+        }
     }
 }
