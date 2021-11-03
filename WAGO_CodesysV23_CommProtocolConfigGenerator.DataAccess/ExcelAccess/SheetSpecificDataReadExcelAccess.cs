@@ -57,6 +57,7 @@ namespace WAGO_CodesysV23_CommProtocolConfigGenerator.DataAccess.ExcelAccess
                     if (!string.IsNullOrEmpty(str))
                     {
                         // Reflection - allows inner classes - supports string and boolean as destination type
+                        // ToDo add helper class or method for setting property in object
                         var property = _columnsNumbersToStructDict[columnNum];
                         var properties = property.Split('.');
                         if (properties.Length == 1)
