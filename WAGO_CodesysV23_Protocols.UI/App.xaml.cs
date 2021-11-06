@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess;
+using WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705;
 using WAGO_CodesysV23_Protocols.UI.Data.Repository;
 using WAGO_CodesysV23_Protocols.UI.View.Services;
 using WAGO_CodesysV23_Protocols.UI.ViewModel.Service;
@@ -22,7 +22,7 @@ namespace WAGO_CodesysV23_Protocols.UI
             // Application objects initialization
             FileDialog = new ExcelXmlFileDialog();
             ErrorHandler = new ErrorHandler();
-            ProtocolConfigurationObjectsReadRepository = new ProtocolConfigurationObjectsReadRepository(new ProtocolConfigurationObjectsReadExcelAccess());
+            ProtocolConfigurationObjectsReadRepository = new ProtocolConfigurationObjectsReadRepository(new Iec608705ObjectsReadExcelAccess());
         }
     }
 }

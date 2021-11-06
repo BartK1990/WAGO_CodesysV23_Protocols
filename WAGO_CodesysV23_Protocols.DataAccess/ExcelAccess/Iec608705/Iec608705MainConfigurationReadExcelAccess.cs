@@ -4,16 +4,16 @@ using WAGO_CodesysV23_Protocols.Model;
 using WAGO_CodesysV23_Protocols.Model.Item;
 using WAGO_CodesysV23_Protocols.Model.ItemList;
 
-namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
+namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 {
-    public class ProtocolConfigurationMainConfigurationReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705MainConfigurationList, Iec608705MainConfiguration>
+    public class Iec608705MainConfigurationReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705MainConfigurationList, Iec608705MainConfiguration>
     {
-        public ProtocolConfigurationMainConfigurationReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.MainListSheetName)
+        public Iec608705MainConfigurationReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.MainListSheetName)
         {
             // Excel sheet columns to read
-            columnsNamesToClassDict.Add("ExecutionTimeDefault", "ExecutionTimeDefault");
-            columnsNamesToClassDict.Add("ExecutionTimeShort", "ExecutionTimeShort");
-            columnsNamesToClassDict.Add("ExecutionTimeLong", "ExecutionTimeLong");
+            columnsNamesToClassDict.Add("ExecutionTimeDefault", "Execution Time Default");
+            columnsNamesToClassDict.Add("ExecutionTimeShort", "Execution Time Short");
+            columnsNamesToClassDict.Add("ExecutionTimeLong", "Execution Time Long");
         }
 
         protected override Iec608705MainConfigurationList ReadSheetData(ExcelWorksheet worksheet)

@@ -4,17 +4,17 @@ using WAGO_CodesysV23_Protocols.Model;
 using WAGO_CodesysV23_Protocols.Model.Item;
 using WAGO_CodesysV23_Protocols.Model.ItemList;
 
-namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
+namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 {
-    public class ProtocolConfigurationConnectionsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705ConnectionsList, Iec608705Connections>
+    public class Iec608705ConnectionsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705ConnectionsList, Iec608705Connections>
     {
-        public ProtocolConfigurationConnectionsReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.ConnectionsSheetName)
+        public Iec608705ConnectionsReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.ConnectionsSheetName)
         {
             // Excel sheet columns to read
             columnsNamesToClassDict.Add("ExecutionTimeDefault", "ExecutionTimeDefault");
             columnsNamesToClassDict.Add("ExecutionTimeShort", "ExecutionTimeShort");
             columnsNamesToClassDict.Add("IpAddress", "IP address");
-            columnsNamesToClassDict.Add("TcpPort", "ExecutionTimeLong");
+            columnsNamesToClassDict.Add("TcpPort", "TCP port");
         }
 
         protected override Iec608705ConnectionsList ReadSheetData(ExcelWorksheet worksheet)
