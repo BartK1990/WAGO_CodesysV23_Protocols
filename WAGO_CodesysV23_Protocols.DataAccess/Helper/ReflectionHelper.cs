@@ -40,7 +40,6 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                     }
                     else
                     {
-                        // ToDo add helper class or method for boolean handling
                         if (rowPI.PropertyType.Name == "Boolean")
                         {
                             rowPI.SetValue(obj, Convert.ToBoolean(Convert.ToInt16(value)));

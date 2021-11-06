@@ -6,12 +6,10 @@ using WAGO_CodesysV23_Protocols.Model.ItemList;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
 {
-    public class ProtocolConfigurationObjectsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705104AllObjectAttributesList, Iec608705104AllObjectAttributes>
+    public class ProtocolConfigurationObjectsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705AllObjectAttributesList, Iec608705AllObjectAttributes>
     {
         public ProtocolConfigurationObjectsReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.ObjectsSheetName)
         {
-            //SheetName = MappingSetGenerator.SourceItemDictionarySheetName; // Sheet name used in base class in GetExcelData
-
             // Excel sheet columns to read
             columnsNamesToClassDict.Add("Connection", "ConnectionName");
             columnsNamesToClassDict.Add("Object", "ObjectType");
@@ -36,18 +34,18 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
 
         }
 
-        protected override Iec608705104AllObjectAttributesList ReadSheetData(ExcelWorksheet worksheet)
+        protected override Iec608705AllObjectAttributesList ReadSheetData(ExcelWorksheet worksheet)
         {
-            var iec608705104AllObjectAttributesList = new Iec608705104AllObjectAttributesList();
+            var iec608705104AllObjectAttributesList = new Iec608705AllObjectAttributesList();
             var sheetDataList = iec608705104AllObjectAttributesList.SourceDataList;
 
             ReadSheetSpecificData(worksheet, sheetDataList);
             return iec608705104AllObjectAttributesList;
         }
 
-        protected override Iec608705104AllObjectAttributes GetItem()
+        protected override Iec608705AllObjectAttributes GetItem()
         {
-            return new Iec608705104AllObjectAttributes();
+            return new Iec608705AllObjectAttributes();
         }
 
         protected override int RequiredColumnNumber()

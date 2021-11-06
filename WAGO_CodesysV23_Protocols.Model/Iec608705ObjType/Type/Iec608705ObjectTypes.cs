@@ -1,6 +1,6 @@
-﻿namespace WAGO_CodesysV23_Protocols.Model.Iec608705104ObjType
+﻿namespace WAGO_CodesysV23_Protocols.Model.Iec608705ObjType.Type
 {
-    public enum Iec608705104ObjectType
+    public enum Iec608705ObjectTypes
     {
         Obj01M_SP_NA = 1,
         Obj13M_ME_NC = 13,

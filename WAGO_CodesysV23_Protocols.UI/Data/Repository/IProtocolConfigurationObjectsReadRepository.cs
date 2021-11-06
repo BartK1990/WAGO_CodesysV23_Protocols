@@ -2,7 +2,7 @@
 
 namespace WAGO_CodesysV23_Protocols.UI.Data.Repository
 {
-    internal interface IProtocolConfigurationObjectsReadRepository : IExcelReadRepository<Iec608705104AllObjectAttributesList>
+    internal interface IProtocolConfigurationObjectsReadRepository : IExcelReadRepository<Iec608705AllObjectAttributesList>
     {
     }
 }
