@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAGO_CodesysV23_Protocols.UI", "WAGO_CodesysV23_Protocols.UI\WAGO_CodesysV23_Protocols.UI.csproj", "{B89C8567-D0EC-418F-A33A-596C3E6A67D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAGO_CodesysV23_Protocols.Tests", "WAGO_CodesysV23_Protocols.Tests\WAGO_CodesysV23_Protocols.Tests.csproj", "{952E1A4B-4DD7-4E03-8F81-DE3F86B431DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAGO_CodesysV23_Protocols.Model", "WAGO_CodesysV23_Protocols.Model\WAGO_CodesysV23_Protocols.Model.csproj", "{3A40B579-E40C-47DA-BE80-6DA7D22BC08F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAGO_CodesysV23_Protocols.DataAccess", "WAGO_CodesysV23_Protocols.DataAccess\WAGO_CodesysV23_Protocols.DataAccess.csproj", "{82207BAA-6B88-4741-A1FD-5BCFC3ADA23E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B89C8567-D0EC-418F-A33A-596C3E6A67D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89C8567-D0EC-418F-A33A-596C3E6A67D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89C8567-D0EC-418F-A33A-596C3E6A67D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89C8567-D0EC-418F-A33A-596C3E6A67D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952E1A4B-4DD7-4E03-8F81-DE3F86B431DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952E1A4B-4DD7-4E03-8F81-DE3F86B431DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952E1A4B-4DD7-4E03-8F81-DE3F86B431DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952E1A4B-4DD7-4E03-8F81-DE3F86B431DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A40B579-E40C-47DA-BE80-6DA7D22BC08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A40B579-E40C-47DA-BE80-6DA7D22BC08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A40B579-E40C-47DA-BE80-6DA7D22BC08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A40B579-E40C-47DA-BE80-6DA7D22BC08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82207BAA-6B88-4741-A1FD-5BCFC3ADA23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82207BAA-6B88-4741-A1FD-5BCFC3ADA23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82207BAA-6B88-4741-A1FD-5BCFC3ADA23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82207BAA-6B88-4741-A1FD-5BCFC3ADA23E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0A9F04F-D8C1-4649-9DCC-1F4F6C1160DD}
+	EndGlobalSection
+EndGlobal

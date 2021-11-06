@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Image\Icon\exchange-arrows_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WAGO_CodesysV23_Protocols.DataAccess\WAGO_CodesysV23_Protocols.DataAccess.csproj" />
+    <ProjectReference Include="..\WAGO_CodesysV23_Protocols.Model\WAGO_CodesysV23_Protocols.Model.csproj" />
+  </ItemGroup>
+
+</Project>
