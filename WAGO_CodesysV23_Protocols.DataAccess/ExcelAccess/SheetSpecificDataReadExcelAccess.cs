@@ -1,9 +1,8 @@
 ﻿using OfficeOpenXml;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using WAGO_CodesysV23_Protocols.DataAccess.Exceptions;
+using WAGO_CodesysV23_Protocols.DataAccess.Helper;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
 {
@@ -53,51 +52,11 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
                 TItem item = GetItem();
                 foreach (int columnNum in _columnsNumbersToStructDict.Keys)
                 {
-                    string str = GetCellValue(worksheet.Cells[rowNumCnt, columnNum].Value);
-                    if (!string.IsNullOrEmpty(str))
+                    string value = GetCellValue(worksheet.Cells[rowNumCnt, columnNum].Value);
+                    if (!string.IsNullOrEmpty(value))
                     {
-                        // Reflection - allows inner classes - supports string and boolean as destination type
-                        // ToDo add helper class or method for setting property in object
                         var property = _columnsNumbersToStructDict[columnNum];
-                        var properties = property.Split('.');
-                        if (properties.Length == 1)
-                        {
-                            PropertyInfo rowPI = typeof(TItem).GetProperty(property);
-                            if (rowPI == null)
-                            {
-                                throw new InvalidExcelSheetException($"Wrong property name: {property}");
-                            }
-                            rowPI.SetValue(item, str);
-                        }
-                        else
-                        {
-                            object obj = item;
-                            for (int i = 0; i < properties.Length; i++)
-                            {
-                                Type type = obj.GetType();
-                                PropertyInfo rowPI = type.GetProperty(properties[i]);
-                                if (rowPI == null)
-                                {
-                                    throw new InvalidExcelSheetException($"Wrong property name: {property}");
-                                }
-                                if(i < (properties.Length - 1))
-                                {
-                                    obj = rowPI.GetValue(obj);
-                                }
-                                else
-                                {
-                                    // ToDo add helper class or method for boolean handling
-                                    if(rowPI.PropertyType.Name == "Boolean")
-                                    {
-                                        rowPI.SetValue(obj, Convert.ToBoolean(Convert.ToInt16(str)));
-                                    }
-                                    else
-                                    {
-                                        rowPI.SetValue(obj, str);
-                                    }
-                                }
-                            }
-                        }
+                        ReflectionHelper.SetValue(item, property, value);
                     }
                 }
                 sheetDataList.Add(item);
