@@ -1,9 +1,10 @@
-﻿using WAGO_CodesysV23_Protocols.Model.Iec608705ObjType;
+﻿using System;
+using WAGO_CodesysV23_Protocols.Model.Iec608705ObjType;
 using WAGO_CodesysV23_Protocols.Model.Iec608705ObjType.Type;
 
 namespace WAGO_CodesysV23_Protocols.Model.Item
 {
-    public class Iec608705AllObjectAttributes : IIec608705Object, IIec608705Object_CP56Time, IIec608705Object_Execute, IIec608705Object_13M_ME_NC
+    public class Iec608705AllObjectAttributes : IEquatable<Iec608705AllObjectAttributes>, IIec608705Object, IIec608705Object_CP56Time, IIec608705Object_Execute, IIec608705Object_13M_ME_NC
     {
         public string ObjectType { get; set; }
         public string ConnectionName { get; set; }
@@ -17,5 +18,26 @@ namespace WAGO_CodesysV23_Protocols.Model.Item
         public Iec608705TypeChannel SB { get; set; } = new Iec608705TypeChannel();
         public Iec608705TypeChannel NT { get; set; } = new Iec608705TypeChannel();
         public Iec608705TypeChannel IV { get; set; } = new Iec608705TypeChannel();
+
+        public bool Equals(Iec608705AllObjectAttributes other)
+        {
+            if (other == null)
+                return false;
+            if (this.ObjectType == other.ObjectType
+                && this.ConnectionName == other.ConnectionName
+                && this.Comment == other.Comment
+                && this.Address == other.Address
+                && this.MainVariable.Equals(other.MainVariable)
+                && this.CP56Time.Equals(other.CP56Time)
+                && this.Execute.Equals(other.Execute)
+                && this.OV.Equals(other.OV)
+                && this.BL.Equals(other.BL)
+                && this.SB.Equals(other.SB)
+                && this.NT.Equals(other.NT)
+                && this.IV.Equals(other.IV)
+                )
+                return true;
+            return false;
+        }
     }
 }

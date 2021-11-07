@@ -8,7 +8,7 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 {
     public class Iec608705MainConfigurationReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705MainConfigurationList, Iec608705MainConfiguration>
     {
-        public Iec608705MainConfigurationReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.MainListSheetName)
+        public Iec608705MainConfigurationReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.MainConfigurationSheetName)
         {
             // Excel sheet columns to read
             columnsNamesToClassDict.Add("ExecutionTimeDefault", "Execution Time Default");

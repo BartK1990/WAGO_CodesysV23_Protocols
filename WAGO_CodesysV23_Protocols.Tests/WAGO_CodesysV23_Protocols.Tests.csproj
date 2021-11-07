@@ -9,7 +9,13 @@
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WAGO_CodesysV23_Protocols.DataAccess\WAGO_CodesysV23_Protocols.DataAccess.csproj" />
+    <ProjectReference Include="..\WAGO_CodesysV23_Protocols.Model\WAGO_CodesysV23_Protocols.Model.csproj" />
+    <ProjectReference Include="..\WAGO_CodesysV23_Protocols.UI\WAGO_CodesysV23_Protocols.UI.csproj" />
   </ItemGroup>
 
 </Project>

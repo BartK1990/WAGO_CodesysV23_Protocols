@@ -22,7 +22,7 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                 {
                     throw new ArgumentException($"Wrong property name: {property}");
                 }
-                rowPI.SetValue(obj, value);
+                SetValueOfType(obj, value, rowPI);
             }
             else
             {
@@ -51,6 +51,11 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                     }
                 }
             }
+        }
+
+        private static void SetValueOfType(object obj, string value, PropertyInfo rowPI)
+        {
+            rowPI.SetValue(obj, value);
         }
     }
 }
