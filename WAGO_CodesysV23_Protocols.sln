@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAGO_CodesysV23_Protocols.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAGO_CodesysV23_Protocols.DataAccess", "WAGO_CodesysV23_Protocols.DataAccess\WAGO_CodesysV23_Protocols.DataAccess.csproj", "{82207BAA-6B88-4741-A1FD-5BCFC3ADA23E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8507F121-8295-4988-9B28-226A5C399AA0}"
+	ProjectSection(SolutionItems) = preProject
+		InputOutputFiles\IEC_104_Conf.xlsx = InputOutputFiles\IEC_104_Conf.xlsx
+		InputOutputFiles\IEC_104_Conf.xml = InputOutputFiles\IEC_104_Conf.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
