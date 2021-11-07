@@ -1,30 +1,49 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
 {
     internal static class ReflectionHelper
     {
-        // Reflection - allows inner classes - supports string and boolean as destination type
+        // Reflection - allows inner classes - supports string and System.Boolean as destination type
         internal static void SetValue(object obj, string property, string value)
+        {
+            object finalObj;
+            PropertyInfo rowPI;
+            finalObj = DigObject(obj, property);
+            var finalProperty = property.Split('.').Last();
+
+            Type type = finalObj.GetType();
+            rowPI = type.GetProperty(finalProperty);
+            if (rowPI == null)
+            {
+                throw new ArgumentException($"Wrong property name: {property}");
+            }
+
+            if (rowPI.PropertyType.Name == "Boolean")
+            {
+                if(int.TryParse(value, out int i))
+                {
+                    bool b = Convert.ToBoolean(i);
+                    rowPI.SetValue(finalObj, b);
+                }
+            }
+            else
+            {
+                rowPI.SetValue(finalObj, value);
+            }
+        }
+
+        private static object DigObject(object obj, string property)
         {
             if (obj == null)
             {
                 throw new NullReferenceException($"Object is null for property name: {property}");
             }
-            
+
             var properties = property.Split('.');
-            if (properties.Length == 1)
-            {
-                Type type = obj.GetType();
-                PropertyInfo rowPI = type.GetProperty(property);
-                if (rowPI == null)
-                {
-                    throw new ArgumentException($"Wrong property name: {property}");
-                }
-                SetValueOfType(obj, value, rowPI);
-            }
-            else
+            if (properties.Length > 1)
             {
                 for (int i = 0; i < properties.Length; i++)
                 {
@@ -40,22 +59,12 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                     }
                     else
                     {
-                        if (rowPI.PropertyType.Name == "Boolean")
-                        {
-                            rowPI.SetValue(obj, Convert.ToBoolean(Convert.ToInt16(value)));
-                        }
-                        else
-                        {
-                            rowPI.SetValue(obj, value);
-                        }
+                        return obj;
                     }
                 }
             }
+            return obj;
         }
 
-        private static void SetValueOfType(object obj, string value, PropertyInfo rowPI)
-        {
-            rowPI.SetValue(obj, value);
-        }
     }
 }
