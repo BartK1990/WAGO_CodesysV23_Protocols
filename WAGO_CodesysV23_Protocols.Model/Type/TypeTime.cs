@@ -8,7 +8,7 @@
             get { return TimeBase; }
             set 
             {            
-                if (TimeBaseTypes.TypesDict.ContainsValue(value))
+                if (TimeBaseType.TypesDict.ContainsValue(value))
                 {
                     TimeBase = value;
                 }
@@ -17,7 +17,7 @@
 
         public TypeTime()
         {
-            TimeBase = TimeBaseTypes.TypesDict["Milisecond"];
+            TimeBase = TimeBaseType.TypesDict[TimeBaseTypes.Milisecond.ToString()];
         }
     }
 }
