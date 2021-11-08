@@ -2,7 +2,18 @@
 {
     public class TypeTime
     {
-        public int TimeValue { get; set; }
+        public int TimeValue
+        {
+            get { return TimeValue; }
+            set
+            {
+                if (value >= 0)
+                {
+                    TimeValue = value;
+                }
+            }
+        }
+
         public string TimeBase
         {
             get { return TimeBase; }
@@ -18,6 +29,11 @@
         public TypeTime()
         {
             TimeBase = TimeBaseType.TypesDict[TimeBaseTypes.Milisecond.ToString()];
+        }
+
+        public override string ToString()
+        {
+            return $"t#{this.TimeValue.ToString()}{this.TimeBase}";
         }
     }
 }
