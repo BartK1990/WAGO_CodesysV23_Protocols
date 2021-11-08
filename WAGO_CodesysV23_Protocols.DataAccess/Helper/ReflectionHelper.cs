@@ -21,17 +21,22 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                 throw new ArgumentException($"Wrong property name: {property}");
             }
 
-            if (rowPI.PropertyType.Name == "Boolean")
+            switch (rowPI.PropertyType.Name)
             {
-                if(int.TryParse(value, out int i))
-                {
-                    bool b = Convert.ToBoolean(i);
-                    rowPI.SetValue(finalObj, b);
-                }
-            }
-            else
-            {
-                rowPI.SetValue(finalObj, value);
+                case "Boolean":
+                    if (int.TryParse(value, out int i))
+                    {
+                        bool b = Convert.ToBoolean(i);
+                        rowPI.SetValue(finalObj, b);
+                    }
+                    break;
+                case "WagoTime":
+                    // ToDo add time handling
+                    throw new NotImplementedException();
+                    break;
+                default:
+                    rowPI.SetValue(finalObj, value);
+                    break;
             }
         }
 

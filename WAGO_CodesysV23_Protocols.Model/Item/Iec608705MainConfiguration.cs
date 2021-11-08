@@ -4,8 +4,8 @@ namespace WAGO_CodesysV23_Protocols.Model.Item
 {
     public class Iec608705MainConfiguration
     {
-        public TypeTime ExecutionTimeDefault { get; set; } = new TypeTime();
-        public TypeTime ExecutionTimeShort { get; set; } = new TypeTime();
-        public TypeTime ExecutionTimeLong { get; set; } = new TypeTime();
+        public WagoTime ExecutionTimeDefault { get; set; } = new WagoTime();
+        public WagoTime ExecutionTimeShort { get; set; } = new WagoTime();
+        public WagoTime ExecutionTimeLong { get; set; } = new WagoTime();
     }
 }

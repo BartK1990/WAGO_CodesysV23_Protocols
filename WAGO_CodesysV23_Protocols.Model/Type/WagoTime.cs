@@ -1,6 +1,6 @@
 ﻿namespace WAGO_CodesysV23_Protocols.Model.Type
 {
-    public class TypeTime
+    public class WagoTime
     {
         public int TimeValue
         {
@@ -19,16 +19,16 @@
             get { return TimeBase; }
             set 
             {            
-                if (TimeBaseType.TypesDict.ContainsValue(value))
+                if (WagoTimeBaseType.TypesDict.ContainsValue(value))
                 {
                     TimeBase = value;
                 }
             } 
         }
 
-        public TypeTime()
+        public WagoTime()
         {
-            TimeBase = TimeBaseType.TypesDict[TimeBaseTypes.Milisecond.ToString()];
+            TimeBase = WagoTimeBaseType.TypesDict[WagoTimeBaseTypes.Milisecond.ToString()];
         }
 
         public override string ToString()
