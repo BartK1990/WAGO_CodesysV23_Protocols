@@ -32,7 +32,7 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                     break;
                 case "WagoTime":
                     // ToDo add time handling
-                    throw new NotImplementedException();
+                    
                     break;
                 default:
                     rowPI.SetValue(finalObj, value);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using WAGO_CodesysV23_Protocols.Model.Type;
 using WAGO_CodesysV23_Protocols.UI.Data.Repository;
 using WAGO_CodesysV23_Protocols.UI.Event;
 using WAGO_CodesysV23_Protocols.UI.View.Services;
