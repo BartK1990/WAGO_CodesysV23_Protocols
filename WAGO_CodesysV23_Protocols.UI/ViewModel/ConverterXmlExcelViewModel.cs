@@ -13,8 +13,9 @@ namespace WAGO_CodesysV23_Protocols.UI.ViewModel
     {
         private readonly IExcelXmlFileDialog _fileDialog;
         private readonly IErrorHandler _errorHandler;
-        private readonly IProtocolConfigurationObjectsReadRepository _protocolConfigurationObjectsReadRepository;
-
+        private readonly IIec608705ObjectsReadRepository _iec608705ObjectsReadRepository;
+        private readonly IIec608705ConnectionsReadRepository _iec608705ConnectionsReadRepository;
+        private readonly IIec608705MainConfigurationReadRepository _iec608705MainConfigurationReadRepository;
         private string _loggerText;
         public string LoggerText
         {
@@ -38,12 +39,17 @@ namespace WAGO_CodesysV23_Protocols.UI.ViewModel
 
         internal ConverterXmlExcelViewModel(IExcelXmlFileDialog fileDialog, 
             IErrorHandler errorHandler,
-            IProtocolConfigurationObjectsReadRepository protocolConfigurationObjectsReadRepository)
+            IIec608705ObjectsReadRepository iec608705ObjectsReadRepository,
+            IIec608705ConnectionsReadRepository iec608705ConnectionsReadRepository,
+            IIec608705MainConfigurationReadRepository iec608705MainConfigurationReadRepository
+            )
         {
             this._fileDialog = fileDialog;
             this._errorHandler = errorHandler;
             this._errorHandler.NewError += LogNewError;
-            this._protocolConfigurationObjectsReadRepository = protocolConfigurationObjectsReadRepository;
+            this._iec608705ObjectsReadRepository = iec608705ObjectsReadRepository;
+            this._iec608705ConnectionsReadRepository = iec608705ConnectionsReadRepository;
+            this._iec608705MainConfigurationReadRepository = iec608705MainConfigurationReadRepository;
 
             // Commands
             OpenProtocolConfigurationCommand = new AsyncCommand(OnOpenProtocolConfiguration, OpenProtocolConfigurationCanExecute, this._errorHandler);
@@ -71,7 +77,9 @@ namespace WAGO_CodesysV23_Protocols.UI.ViewModel
             {
                 ProtocolConfigurationLoading = true;
                 // ToDo read file handling
-                var protocolConfigurationObjects = await _protocolConfigurationObjectsReadRepository.ReadDataAsync(filePath);
+                var objects = await _iec608705ObjectsReadRepository.ReadDataAsync(filePath);
+                var connections = await _iec608705ConnectionsReadRepository.ReadDataAsync(filePath);
+                var mainConfiguration = await _iec608705MainConfigurationReadRepository.ReadDataAsync(filePath);
                 ProtocolConfigurationPath = filePath;
                 Log("Protocol configuration loaded");
             }

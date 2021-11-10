@@ -11,8 +11,8 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
         public Iec608705ConnectionsReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.ConnectionsSheetName)
         {
             // Excel sheet columns to read
-            columnsNamesToClassDict.Add("ExecutionTimeDefault", "ExecutionTimeDefault");
-            columnsNamesToClassDict.Add("ExecutionTimeShort", "ExecutionTimeShort");
+            columnsNamesToClassDict.Add("Name", "Name");
+            columnsNamesToClassDict.Add("Connection", "Connection");
             columnsNamesToClassDict.Add("IpAddress", "IP address");
             columnsNamesToClassDict.Add("TcpPort", "TCP port");
         }

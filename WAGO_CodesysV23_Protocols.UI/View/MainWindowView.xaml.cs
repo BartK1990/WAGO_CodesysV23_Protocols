@@ -24,7 +24,9 @@ namespace WAGO_CodesysV23_Protocols.UI.View
             {
                 DataContext = new ViewModel.ConverterXmlExcelViewModel(fileDialog: curApp.FileDialog,
                     errorHandler: curApp.ErrorHandler,
-                    protocolConfigurationObjectsReadRepository: curApp.ProtocolConfigurationObjectsReadRepository)
+                    iec608705ObjectsReadRepository: curApp.Iec608705ObjectsReadRepository,
+                    iec608705ConnectionsReadRepository: curApp.Iec608705ConnectionsReadRepository,
+                    iec608705MainConfigurationReadRepository: curApp.Iec608705MainConfigurationReadRepository)
             };
             var informationView = new InformationView();
 

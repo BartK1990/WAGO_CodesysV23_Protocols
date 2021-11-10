@@ -4,9 +4,9 @@ using WAGO_CodesysV23_Protocols.Model.ItemList;
 
 namespace WAGO_CodesysV23_Protocols.UI.Data.Repository
 {
-    internal class ProtocolConfigurationObjectsReadRepository : ExcelRepository<Iec608705AllObjectAttributesList, Iec608705ObjectsReadExcelAccess>, IProtocolConfigurationObjectsReadRepository
+    internal class Iec608705ObjectsReadRepository : ExcelRepository<Iec608705AllObjectAttributesList, Iec608705ObjectsReadExcelAccess>, IIec608705ObjectsReadRepository
     {
-        public ProtocolConfigurationObjectsReadRepository(Iec608705ObjectsReadExcelAccess excelAccess) : base(excelAccess)
+        public Iec608705ObjectsReadRepository(Iec608705ObjectsReadExcelAccess excelAccess) : base(excelAccess)
         {
         }
 
