@@ -11,9 +11,9 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
         public Iec608705MainConfigurationReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.MainConfigurationSheetName)
         {
             // Excel sheet columns to read
-            columnsNamesToClassDict.Add("ExecutionTimeDefault", "Execution Time Default");
-            columnsNamesToClassDict.Add("ExecutionTimeShort", "Execution Time Short");
-            columnsNamesToClassDict.Add("ExecutionTimeLong", "Execution Time Long");
+            columnsNamesToClassDict.Add("Execution Time Default", "ExecutionTimeDefault");
+            columnsNamesToClassDict.Add("Execution Time Short", "ExecutionTimeShort");
+            columnsNamesToClassDict.Add("Execution Time Long", "ExecutionTimeLong");
         }
 
         protected override Iec608705MainConfigurationList ReadSheetData(ExcelWorksheet worksheet)

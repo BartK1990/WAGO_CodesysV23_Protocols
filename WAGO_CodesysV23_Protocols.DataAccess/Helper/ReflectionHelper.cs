@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using WAGO_CodesysV23_Protocols.Model.Type;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
 {
@@ -31,8 +32,7 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                     }
                     break;
                 case "WagoTime":
-                    // ToDo add time handling
-                    
+                    InvokeMethod(finalObj, finalProperty, nameof(WagoTime.SetTimeValue), new object[] { value });
                     break;
                 default:
                     rowPI.SetValue(finalObj, value);
@@ -69,6 +69,26 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.Helper
                 }
             }
             return obj;
+        }
+
+        private static void InvokeMethod(object obj, string property, string method, object[] parametersArray = null)
+        {
+            if (obj == null)
+            {
+                throw new NullReferenceException($"Object is null for property name: {property}");
+            }
+
+            // Get property class type
+            Type type = obj.GetType();
+            PropertyInfo rowPI = type.GetProperty(property);
+            obj = rowPI.GetValue(obj);
+            type = obj.GetType();
+
+            MethodInfo methodInfo = type.GetMethod(method);
+            if (methodInfo == null)
+                throw new NullReferenceException($"There is no method: {method} for property: {property}");
+
+            methodInfo.Invoke(obj, parametersArray);
         }
 
     }

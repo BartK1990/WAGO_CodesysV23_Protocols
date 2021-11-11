@@ -13,8 +13,8 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
             // Excel sheet columns to read
             columnsNamesToClassDict.Add("Name", "Name");
             columnsNamesToClassDict.Add("Connection", "Connection");
-            columnsNamesToClassDict.Add("IpAddress", "IP address");
-            columnsNamesToClassDict.Add("TcpPort", "TCP port");
+            columnsNamesToClassDict.Add("IP address", "IpAddress");
+            columnsNamesToClassDict.Add("TCP port", "TcpPort");
         }
 
         protected override Iec608705ConnectionsList ReadSheetData(ExcelWorksheet worksheet)
@@ -33,7 +33,7 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 
         protected override int RequiredColumnNumber()
         {
-            return _columnsNumbersToStructDict.FirstOrDefault(v => v.Value == "ExecutionTimeDefault").Key;
+            return _columnsNumbersToStructDict.FirstOrDefault(v => v.Value == "Name").Key;
         }
     }
 }
