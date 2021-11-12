@@ -15,6 +15,15 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
             columnsNamesToClassDict.Add("Connection", "Connection");
             columnsNamesToClassDict.Add("IP address", "IpAddress");
             columnsNamesToClassDict.Add("TCP port", "TcpPort");
+            columnsNamesToClassDict.Add("ASDU address 1", "AsduAddress1");
+            columnsNamesToClassDict.Add("ASDU address 2", "AsduAddress2");
+            columnsNamesToClassDict.Add("Originator address", "OriginatorAddress");
+            columnsNamesToClassDict.Add("T0", "T0");
+            columnsNamesToClassDict.Add("T1", "T1");
+            columnsNamesToClassDict.Add("T2", "T2");
+            columnsNamesToClassDict.Add("T3", "T3");
+            columnsNamesToClassDict.Add("K", "K");
+            columnsNamesToClassDict.Add("W", "W");
         }
 
         protected override Iec608705ConnectionsList ReadSheetData(ExcelWorksheet worksheet)
