@@ -7,7 +7,7 @@ using WAGO_CodesysV23_Protocols.DataAccess.Exceptions;
 using WAGO_CodesysV23_Protocols.Model;
 using WAGO_CodesysV23_Protocols.Model.Iec608705ObjType.Type;
 using WAGO_CodesysV23_Protocols.Model.Item;
-using WAGO_CodesysV23_Protocols.Model.ItemList;
+using WAGO_CodesysV23_Protocols.Model.IList;
 
 namespace WAGO_CodesysV23_Protocols.Tests.DataAccess
 {
@@ -27,7 +27,7 @@ namespace WAGO_CodesysV23_Protocols.Tests.DataAccess
             Iec608705AllObjectAttributesList iec608705AllObjectAttributesListResult;
             using (ExcelPackage package = new ExcelPackage())
             {
-                ExcelWorksheet ws = package.Workbook.Worksheets.Add(Iec608705104ExcelWorkbookValidation.ObjectsSheetName);
+                ExcelWorksheet ws = package.Workbook.Worksheets.Add(Iec608705ExcelWorkbookValidation.ObjectsSheetName);
 
                 // Headers
                 ws.Cells[1, 1].Value = "Connection";

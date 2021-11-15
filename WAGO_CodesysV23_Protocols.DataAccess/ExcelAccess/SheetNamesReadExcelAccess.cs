@@ -1,5 +1,5 @@
 ﻿using OfficeOpenXml;
-using WAGO_CodesysV23_Protocols.Model.ItemList;
+using WAGO_CodesysV23_Protocols.Model.IList;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess
 {

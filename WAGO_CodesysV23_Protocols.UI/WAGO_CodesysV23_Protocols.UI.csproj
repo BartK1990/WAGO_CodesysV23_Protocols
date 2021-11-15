@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Service\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WAGO_CodesysV23_Protocols.DataAccess\WAGO_CodesysV23_Protocols.DataAccess.csproj" />
     <ProjectReference Include="..\WAGO_CodesysV23_Protocols.Model\WAGO_CodesysV23_Protocols.Model.csproj" />
   </ItemGroup>

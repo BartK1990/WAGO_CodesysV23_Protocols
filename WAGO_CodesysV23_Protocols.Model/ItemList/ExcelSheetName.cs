@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WAGO_CodesysV23_Protocols.Model.ItemList
+namespace WAGO_CodesysV23_Protocols.Model.IList
 {
     public class ExcelSheetName
     {

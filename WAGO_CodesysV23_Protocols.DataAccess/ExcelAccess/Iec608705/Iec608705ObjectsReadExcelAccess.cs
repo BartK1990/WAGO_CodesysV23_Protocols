@@ -2,13 +2,13 @@
 using System.Linq;
 using WAGO_CodesysV23_Protocols.Model;
 using WAGO_CodesysV23_Protocols.Model.Item;
-using WAGO_CodesysV23_Protocols.Model.ItemList;
+using WAGO_CodesysV23_Protocols.Model.IList;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 {
     public class Iec608705ObjectsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705AllObjectAttributesList, Iec608705AllObjectAttributes>
     {
-        public Iec608705ObjectsReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.ObjectsSheetName)
+        public Iec608705ObjectsReadExcelAccess() : base(Iec608705ExcelWorkbookValidation.ObjectsSheetName)
         {
             // Excel sheet columns to read
             columnsNamesToClassDict.Add("Connection", "ConnectionName");

@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Iec60870Connection\" />
-    <Folder Include="Iec60870MainConfiguration\" />
+    <Folder Include="Iec608705Connection\" />
+    <Folder Include="Iec608705MainConfiguration\" />
   </ItemGroup>
 
   <ItemGroup>

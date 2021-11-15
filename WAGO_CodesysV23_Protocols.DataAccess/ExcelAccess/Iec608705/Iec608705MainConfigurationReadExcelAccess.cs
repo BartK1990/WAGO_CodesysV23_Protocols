@@ -2,13 +2,13 @@
 using System.Linq;
 using WAGO_CodesysV23_Protocols.Model;
 using WAGO_CodesysV23_Protocols.Model.Item;
-using WAGO_CodesysV23_Protocols.Model.ItemList;
+using WAGO_CodesysV23_Protocols.Model.IList;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 {
     public class Iec608705MainConfigurationReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705MainConfigurationList, Iec608705MainConfiguration>
     {
-        public Iec608705MainConfigurationReadExcelAccess() : base(Iec608705104ExcelWorkbookValidation.MainConfigurationSheetName)
+        public Iec608705MainConfigurationReadExcelAccess() : base(Iec608705ExcelWorkbookValidation.MainConfigurationSheetName)
         {
             // Excel sheet columns to read
             columnsNamesToClassDict.Add("Execution Time Default", "ExecutionTimeDefault");
