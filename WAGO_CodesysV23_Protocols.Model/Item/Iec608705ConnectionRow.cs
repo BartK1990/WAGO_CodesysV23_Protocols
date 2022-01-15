@@ -2,7 +2,7 @@
 
 namespace WAGO_CodesysV23_Protocols.Model.Item
 {
-    public class Iec608705Connections
+    public class Iec608705ConnectionRow
     {
         public string Name { get; set; }
         public string Connection { get; set; }

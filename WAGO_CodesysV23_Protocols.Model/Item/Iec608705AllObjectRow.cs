@@ -4,7 +4,7 @@ using WAGO_CodesysV23_Protocols.Model.Iec608705ObjType.Type;
 
 namespace WAGO_CodesysV23_Protocols.Model.Item
 {
-    public class Iec608705AllObjectAttributes : IEquatable<Iec608705AllObjectAttributes>, IIec608705Object, IIec608705Object_CP56Time, IIec608705Object_Execute, IIec608705Object_13M_ME_NC
+    public class Iec608705AllObjectRow : IEquatable<Iec608705AllObjectRow>, IIec608705Object, IIec608705Object_CP56Time, IIec608705Object_Execute, IIec608705Object_13M_ME_NC
     {
         public string ObjectType { get; set; }
         public string ConnectionName { get; set; }
@@ -19,7 +19,7 @@ namespace WAGO_CodesysV23_Protocols.Model.Item
         public Iec608705TypeChannel NT { get; set; } = new Iec608705TypeChannel();
         public Iec608705TypeChannel IV { get; set; } = new Iec608705TypeChannel();
 
-        public bool Equals(Iec608705AllObjectAttributes other)
+        public bool Equals(Iec608705AllObjectRow other)
         {
             if (other == null)
                 return false;

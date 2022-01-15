@@ -2,7 +2,7 @@
 
 namespace WAGO_CodesysV23_Protocols.Model.IList
 {
-    public class Iec608705ConnectionsList : SourceListBase<Iec608705Connections>
+    public class Iec608705ConnectionRowList : SourceListBase<Iec608705ConnectionRow>
     {
     }
 }

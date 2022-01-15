@@ -24,7 +24,7 @@ namespace WAGO_CodesysV23_Protocols.Tests.DataAccess
         [Test]
         public void ReadExcelDataTest_ValidSheet1Item_1Item()
         {
-            Iec608705AllObjectAttributesList iec608705AllObjectAttributesListResult;
+            Iec608705AllObjectRowList iec608705AllObjectAttributesListResult;
             using (ExcelPackage package = new ExcelPackage())
             {
                 ExcelWorksheet ws = package.Workbook.Worksheets.Add(Iec608705ExcelWorkbookValidation.ObjectsSheetName);
@@ -76,9 +76,9 @@ namespace WAGO_CodesysV23_Protocols.Tests.DataAccess
                 iec608705AllObjectAttributesListResult = _iec608705ObjectsReadExcelAccess.ReadExcelData(package);
             }
 
-            Iec608705AllObjectAttributesList iec608705AllObjectAttributesListExpected = new Iec608705AllObjectAttributesList();
+            Iec608705AllObjectRowList iec608705AllObjectAttributesListExpected = new Iec608705AllObjectRowList();
             iec608705AllObjectAttributesListExpected.SourceDataList.Add(
-                new Iec608705AllObjectAttributes()
+                new Iec608705AllObjectRow()
                 {
                     ConnectionName = "Client104-001_ClientConnection104-001",
                     ObjectType = "13M_ME_NC",

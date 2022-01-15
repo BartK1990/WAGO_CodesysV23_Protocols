@@ -6,7 +6,7 @@ using WAGO_CodesysV23_Protocols.Model.IList;
 
 namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 {
-    public class Iec608705ObjectsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705AllObjectAttributesList, Iec608705AllObjectAttributes>
+    public class Iec608705ObjectsReadExcelAccess : SheetSpecificDataReadExcelAccess<Iec608705AllObjectRowList, Iec608705AllObjectRow>
     {
         public Iec608705ObjectsReadExcelAccess() : base(Iec608705ExcelWorkbookValidation.ObjectsSheetName)
         {
@@ -34,18 +34,18 @@ namespace WAGO_CodesysV23_Protocols.DataAccess.ExcelAccess.Iec608705
 
         }
 
-        protected override Iec608705AllObjectAttributesList ReadSheetData(ExcelWorksheet worksheet)
+        protected override Iec608705AllObjectRowList ReadSheetData(ExcelWorksheet worksheet)
         {
-            var iec608705104AllObjectAttributesList = new Iec608705AllObjectAttributesList();
+            var iec608705104AllObjectAttributesList = new Iec608705AllObjectRowList();
             var sheetDataList = iec608705104AllObjectAttributesList.SourceDataList;
 
             ReadSheetSpecificData(worksheet, sheetDataList);
             return iec608705104AllObjectAttributesList;
         }
 
-        protected override Iec608705AllObjectAttributes GetItem()
+        protected override Iec608705AllObjectRow GetItem()
         {
-            return new Iec608705AllObjectAttributes();
+            return new Iec608705AllObjectRow();
         }
 
         protected override int RequiredColumnNumber()

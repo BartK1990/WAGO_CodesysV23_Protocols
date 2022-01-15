@@ -4,13 +4,13 @@ using WAGO_CodesysV23_Protocols.Model.IList;
 
 namespace WAGO_CodesysV23_Protocols.UI.Data.Repository
 {
-    internal class Iec608705ConnectionsReadRepository : ExcelRepository<Iec608705ConnectionsList, Iec608705ConnectionsReadExcelAccess>, IIec608705ConnectionsReadRepository
+    internal class Iec608705ConnectionsReadRepository : ExcelRepository<Iec608705ConnectionRowList, Iec608705ConnectionsReadExcelAccess>, IIec608705ConnectionsReadRepository
     {
         public Iec608705ConnectionsReadRepository(Iec608705ConnectionsReadExcelAccess excelAccess) : base(excelAccess)
         {
         }
 
-        public async Task<Iec608705ConnectionsList> ReadDataAsync(string path)
+        public async Task<Iec608705ConnectionRowList> ReadDataAsync(string path)
         {
             return await ExcelAccess.ReadExcelDataAsync(path);
         }
