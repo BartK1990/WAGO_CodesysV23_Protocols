@@ -16,6 +16,7 @@
             <RowDefinition Height="8px" />
             <RowDefinition Height="26px" />
             <RowDefinition Height="40px" />
+            <RowDefinition Height="26px" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
@@ -41,6 +42,15 @@
             </DockPanel>
         </Grid>
         <Grid Grid.Row="3">
+            <DockPanel>
+                <Button x:Name="SaveXmlConfigurationButton" Command="{Binding SaveXmlConfigurationCommand}" 
+                        Content="Save file" Margin="10 0 10 0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="180"/>
+                <mah:ProgressRing Foreground="{DynamicResource MahApps.Brushes.ThemeForeground}" IsActive="{Binding XmlConfigurationSaving}"
+                                  HorizontalAlignment="Left"
+                                  Width="24"/>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="4">
             <Border Style="{StaticResource BorderDefault}">
                 <ScrollViewer>
                     <TextBox x:Name="LogConsole" Text="{Binding Path=LoggerText, Mode=OneWay}" IsReadOnly="True"/>

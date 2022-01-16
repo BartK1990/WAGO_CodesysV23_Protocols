@@ -2,9 +2,9 @@
 
 namespace WAGO_CodesysV23_Protocols.Model.Iec608705ObjType
 {
-    internal interface IIec608705Object_13M_ME_NC
+    public interface IIec608705Object_13M_ME_NC
     {
-        Iec608705TypeChannel OV { get; set; }  
+        Iec608705TypeChannel OV { get; set; }
         Iec608705TypeChannel BL { get; set; }
         Iec608705TypeChannel SB { get; set; }
         Iec608705TypeChannel NT { get; set; }

@@ -62,11 +62,14 @@ namespace WAGO_CodesysV23_Protocols.UI.ViewModel
 
             // Commands
             OpenProtocolConfigurationCommand = new AsyncCommand(OnOpenProtocolConfiguration, OpenProtocolConfigurationCanExecute, this._errorHandler);
+            SaveXmlConfigurationCommand = new AsyncCommand(OnSaveXmlConfiguration, SaveXmlConfigurationCanExecute, this._errorHandler);
             GetProtocolConfigurationCommand = new AsyncCommand<string>(execute: OnGetProtocolConfiguration, errorHandler: this._errorHandler);
         }
 
         #region ProtocolConfiguration commands
         public IAsyncCommand OpenProtocolConfigurationCommand { get; private set; }
+        public IAsyncCommand SaveXmlConfigurationCommand { get; private set; }
+
         private async Task OnOpenProtocolConfiguration()
         {
             var filePath = _fileDialog.OpenFile();
@@ -122,6 +125,19 @@ namespace WAGO_CodesysV23_Protocols.UI.ViewModel
             {
                 ProtocolConfigurationLoading = false;
             }
+        }
+
+        private async Task OnSaveXmlConfiguration()
+        {
+            var filePath = _fileDialog.SaveFile();
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                throw new NotImplementedException();
+            }
+        }
+        private bool SaveXmlConfigurationCanExecute()
+        {
+            return true;
         }
         #endregion
 

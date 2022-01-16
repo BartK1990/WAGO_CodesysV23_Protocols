@@ -4,7 +4,9 @@ using WAGO_CodesysV23_Protocols.Model.Iec608705ObjType.Type;
 
 namespace WAGO_CodesysV23_Protocols.Model.Item
 {
-    public class Iec608705AllObjectRow : IEquatable<Iec608705AllObjectRow>, IIec608705Object, IIec608705Object_CP56Time, IIec608705Object_Execute, IIec608705Object_13M_ME_NC
+    public class Iec608705AllObjectRow : IEquatable<Iec608705AllObjectRow>, 
+        IIec608705Object, IIec608705Object_CP56Time, IIec608705Object_Execute, 
+        IIec608705Object_13M_ME_NC
     {
         public string ObjectType { get; set; }
         public string ConnectionName { get; set; }

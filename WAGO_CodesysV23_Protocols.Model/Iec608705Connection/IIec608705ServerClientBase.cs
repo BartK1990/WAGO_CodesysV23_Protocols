@@ -2,5 +2,6 @@
 {
     public interface IIec608705ServerClientBase
     {
+        string TaskInfoObj { get; set; }
     }
 }
